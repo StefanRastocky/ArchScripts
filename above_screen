@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xrandr --output VGA1 --auto --above LVDS1 && setbg
+xset r rate 190 60
+setxkbmap -option caps:swapescape

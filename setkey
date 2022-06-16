@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xset r rate 190 60
+setxkbmap -option caps:swapescape

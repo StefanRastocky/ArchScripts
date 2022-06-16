@@ -1,0 +1,21 @@
+#!/bin/sh
+while true; do
+
+	date "+%F %R" > /tmp/CurTime.tmp
+	ip addr | grep "inet 192" | cut -b 10-21 > /tmp/CurIP.tmp
+	sleep 60s
+done &
+
+
+while true; do
+	LOCALTIME=$(cat /tmp/CurTime.tmp)
+	FREEMEM=$(free -h | grep "Mem:" | cut -b 40-43)
+	BATTERY=$(acpi | grep -P -o '[0-9]+(?=%)')
+	IP=$(cat /tmp/CurIP.tmp)
+
+
+	xsetroot -name "| IP wls1:$IP | MEM $FREEMEM free | (III) $BATTERY% | $LOCALTIME"
+	sleep 10s
+done &
+
+
