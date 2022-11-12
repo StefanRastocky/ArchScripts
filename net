@@ -4,3 +4,5 @@ sudo killall wpa_supplicant dhcpcd
 sudo ip link set wls1 up
 sudo wpa_supplicant -B -i wls1 -c /etc/wpa_supplicant/wpa_supplicant.conf
 sudo dhcpcd wls1
+
+status_reload
